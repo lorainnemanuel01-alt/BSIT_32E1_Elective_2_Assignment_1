@@ -1,0 +1,178 @@
+﻿@model List<BSIT_32E1_Elective_2_Assignment_1.Models.QuizQuestion>
+
+@{
+    ViewData["Title"] = "Elective 2 Quiz";
+}
+
+<style>
+    body {
+        background-color: #0f172a;
+        color: #f1f5f9;
+    }
+
+    .quiz-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .quiz-header {
+        text-align: center;
+        padding: 40px 20px;
+        margin-bottom: 35px;
+        background: linear-gradient(135deg, #1e293b, #172554);
+        border-radius: 20px;
+        border: 1px solid #334155;
+    }
+
+    .quiz-header h1 {
+        font-size: 38px;
+        font-weight: 800;
+        color: #ffffff;
+    }
+
+    .quiz-header p {
+        color: #94a3b8;
+        font-size: 16px;
+    }
+
+    .quiz-badge {
+        display: inline-block;
+        background: #2563eb;
+        color: white;
+        padding: 7px 15px;
+        border-radius: 50px;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .question-card {
+        background-color: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 16px;
+        padding: 25px;
+        margin-bottom: 25px;
+        transition: 0.2s;
+    }
+
+    .question-card:hover {
+        border-color: #3b82f6;
+    }
+
+    .question-number {
+        color: #60a5fa;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .question-text {
+        font-size: 18px;
+        font-weight: 600;
+        color: #f8fafc;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .choice-item {
+        background: #0f172a;
+        border: 1px solid #334155;
+        border-radius: 10px;
+        padding: 13px 16px;
+        margin-bottom: 10px;
+        color: #cbd5e1;
+        line-height: 1.6;
+    }
+
+    .answer-box {
+        background: #064e3b;
+        border: 1px solid #059669;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 20px;
+        color: #a7f3d0;
+    }
+
+    .answer-label {
+        color: #34d399;
+        font-weight: bold;
+    }
+
+    .quiz-footer {
+        text-align: center;
+        color: #64748b;
+        margin-top: 35px;
+        padding: 20px;
+    }
+
+    @@media (max-width: 600px) {
+        .quiz-container {
+            padding: 12px;
+            margin-top: 20px;
+        }
+
+        .quiz-header h1 {
+            font-size: 28px;
+        }
+
+        .question-card {
+            padding: 18px;
+        }
+
+        .question-text {
+            font-size: 16px;
+        }
+    }
+</style>
+
+<div class="quiz-container">
+
+    <div class="quiz-header">
+        <span class="quiz-badge">IT ELECTIVE 2 • BSIT 32E1</span>
+
+        <h1>ASP.NET Core MVC Quiz</h1>
+
+        <p>Server-Side Rendering, Web API, REST, and HTTP Fundamentals</p>
+
+        <hr style="border-color: #334155; margin: 25px auto; max-width: 500px;" />
+
+        <p style="color: #cbd5e1;">
+            Review the questions below and check the correct answers.
+        </p>
+    </div>
+
+    @foreach (var question in Model)
+    {
+        <div class="question-card">
+
+            <div class="question-number">
+                QUESTION @question.Id
+            </div>
+
+            <div class="question-text">
+                @question.Question
+            </div>
+
+            <div class="choices">
+                @foreach (var choice in question.Choices)
+                {
+                    <div class="choice-item">
+                        @choice
+                    </div>
+                }
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">✓ Correct Answer:</span>
+                @question.CorrectAnswer
+            </div>
+
+        </div>
+    }
+
+    <div class="quiz-footer">
+        <p>BSIT 32E1 | Elective 2 Assignment 1</p>
+        <p>Built with ASP.NET Core MVC</p>
+    </div>
+
+</div>
