@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BSIT_32E1_Elective_2_Assignment_1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60b6f1034e2e0d3eb89bcfeb14b260f05fceb977")]
 [assembly: System.Reflection.AssemblyProductAttribute("BSIT_32E1_Elective_2_Assignment_1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BSIT_32E1_Elective_2_Assignment_1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
